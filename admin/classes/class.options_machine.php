@@ -480,6 +480,45 @@ class Options_Machine {
 					
 				break;
 				
+				
+				//backup and restore options data
+				case 'backup':
+				
+					$instructions = $value['desc'];
+					$backup = get_option(BACKUPS);
+					
+					if(!isset($backup['backup_log'])) {
+						$log = 'No backups yet';
+					} else {
+						$log = $backup['backup_log'];
+					}
+					
+					$output .= '<div class="backup-box">';
+					$output .= '<div class="instructions">'.$instructions."\n";
+					$output .= '<p><strong>'. __('Last Backup : ','dronetv').'<span class="backup-log">'.$log.'</span></strong></p></div>'."\n";
+					$output .= '<a href="#" id="of_backup_button" class="button" title="Backup Options">Backup Options</a>';
+					$output .= '<a href="#" id="of_restore_button" class="button" title="Restore Options">Restore Options</a>';
+					$output .= '</div>';
+				
+				break;
+				
+				//export or import data between different installs
+				case 'transfer':
+				
+					$instructions = $value['desc'];
+					$output .= '<textarea id="export_data" rows="8">'.base64_encode(serialize(@$data)) /* 100% safe - ignore theme check nag */ .'</textarea>'."\n";
+					$output .= '<a href="#" id="of_import_button" class="button" title="Restore Options">Import Options</a>';
+				
+				break;
+			
+				case 'migrate':
+				
+					$output .= 'Your Previous Domain (http://localhost)<br><input type="text" id="md_migrate_old" name="md_migrate_old" value=""><br>';
+					$output .= 'Your New Domain (http://www.yournewsite.com)<br><input type="text" id="md_migrate_new" name="md_migrate_new" value=""><br><br>';
+					$output .= '<a href="#" id="of_migrate_button" class="button" title="Replace URLs">Replace URLs</a>';
+				
+				break;
+				
 			
 			}
 			

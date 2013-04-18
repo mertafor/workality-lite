@@ -316,7 +316,7 @@ if ( ! function_exists( 'getNextBack' ) ) {
 			$take = $current2;	
 			if($w=="prev") { 
 				$whr = ">";
-				$ordering = "desc";
+				$ordering = "asc";
 			}else{
 				$whr = "<";	
 				$ordering = "desc";

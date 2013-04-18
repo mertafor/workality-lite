@@ -35,7 +35,7 @@ function optionsframework_admin_init()
  */
 function optionsframework_add_admin() {
 	
-    $of_page = add_theme_page( THEMENAME, 'Theme Options', 'edit_theme_options', 'optionsframework', 'optionsframework_options_page');
+    $of_page = add_menu_page( THEMENAME, 'Workality Lite', 'edit_theme_options', 'northeme_framework', 'optionsframework_options_page',ADMIN_DIR.'/assets/images/northeme_admin.png',58);
 
 	// Add framework functionaily to the head individually
 	add_action("admin_print_scripts-$of_page", 'of_load_only');
@@ -209,6 +209,26 @@ function of_ajax_callback()
 			
 		die('1'); 
 	}
+	elseif($save_type == 'migrate_works'){
+		
+		if(isset($_POST['oldlink']) && isset($_POST['newlink'])) {
+			$oldlink = $_POST['oldlink'];
+			$newlink = $_POST['newlink'];
+			
+			if($oldlink!="" && $oldlink!="") {
+				$wmedia = $wpdb->get_results("SELECT ID FROM $wpdb->posts");
+				
+				foreach($wmedia as $foo) {
+					$work_media = unserialize(get_post_meta( $foo->ID, 'work-media', true ));
+					if(is_array($work_media)) {
+						$work_media = str_replace($oldlink,$newlink,$work_media);
+						update_post_meta($foo->ID, 'work-media', serialize($work_media));
+					}
+				}
+			}
+		}
+		die('1'); 
+	}
 	elseif($save_type == 'restore_options')
 	{
 			
@@ -221,7 +241,7 @@ function of_ajax_callback()
 	elseif($save_type == 'import_options'){
 			
 		$data = $_POST['data'];
-		//$data = unserialize(base64_decode($data)); //100% safe - ignore theme check nag
+		$data = unserialize(base64_decode($data)); //100% safe - ignore theme check nag
 		update_option(OPTIONS, $data);
 		
 		die('1'); 

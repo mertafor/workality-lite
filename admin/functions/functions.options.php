@@ -403,7 +403,57 @@ $of_options[] = 		array(
 						'desc' => __('E.g. http://dribbble.com/username', ''),
 						'std' => ''
 						);	
+
+
+													
+											
+
+// Backup Options
+$of_options[] = array( "name" => "Transfer",
+					"type" => "heading",
+					"icon"=>'exchange'
+					);
+					
+$of_options[] = array( "name" => "Backup and Restore Options",
+                    "id" => "of_backup",
+                    "std" => "",
+                    "type" => "backup",
+					"desc" => 'You can use the two buttons below to backup your current options, and then restore it back at a later time. This is useful if you want to experiment on the options but would like to keep the old settings in case you need it back.',
+					);
+					
+$of_options[] = array( "name" => "Transfer Theme Options Data",
+                    "id" => "of_transfer",
+                    "std" => "",
+                    "type" => "transfer",
+					"desc" => 'You can tranfer the saved options data between different installs by copying the text inside the text box. To import data from another install, replace the data in the text box with the one from another install and click "Import Options".
+						',
+					);
+					
+	
+$of_options[] = array( "name" => "",
+                    "id" => "md_migrate_info",
+                    "std" => "<strong>Update Your Domain Name for Works Images</strong><br>
+					DO NOT USE THIS OPTION UNLESS YOUR DOMAIN NAME IS CHANGED<br>
+					This option must be used when your Wordpress content has been moved/imported into another Wordpress (remote server/local server etc.). It allows you to update the current URLs of the \"Works\" post type images. This is a required step since Works images are using absolute URL paths.
+					<br><br>
+					In order to complete this step, enter your previous website URL and new website URL below, then click to Replace URLs button.<br><br>
+					Before proceed, it's strongly recommended to backup your Database.
+					",
+                    "type" => "info",
+					"desc" => '',
+					);
+					
+										
+$of_options[] = 		array(
+						'id' => 'md_migrate_local',
+						'type' => 'migrate',
+						'name' => __('Replace URLs', ''),
+						'desc' => __('', ''),
+						'std' => '0'
+						);	
 						
+						
+												
 										
 	}
 }

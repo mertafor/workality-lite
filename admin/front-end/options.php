@@ -33,10 +33,10 @@
 
 		<div id="info_bar">
 		
-			<a>
-				<div id="expand_options" class="expand">Expand</div>
-			</a>
-						
+            <a href="http://northeme.com/themes" target="_blank" class="nor">
+            	→ NEW THEMES
+            </a>
+            		
 			<img style="display:none" src="<?php echo ADMIN_DIR; ?>assets/images/loading-bottom.gif" class="ajax-loading-img ajax-loading-img-bottom" alt="Working..." />
 
 			<button id="of_save" type="button" class="button-primary">
