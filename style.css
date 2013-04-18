@@ -2503,14 +2503,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		margin-top:20px;
 	}
 	footer span.footertext {
-		padding-top:3px;
 		display: inline-block;
-		padding-top: 4px;
 	}
 	footer span.social {
 	 	margin-top:-4px;
 		float:right;
-		padding-bottom:6px;
 	}
 	footer a.footer-logo { 
 		font-size:21px; 
