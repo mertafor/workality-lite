@@ -116,7 +116,7 @@
 						 
 						 if(!$sharittop) {
 							$workdesc .= '<div class="three columns resdontshow omega sharing">';
-				   			$workdesc .= '<div class="sharingbottom tops">
+				   			$workdesc .= '<div class="sharingbottom border-color tops">
 											<strong>'.__('SHARE','dronetv').'</strong>
 											<br class="clear" />
 											<div class="buttons">';
@@ -176,7 +176,7 @@
             
            
                 <div class="fifteensp columns offset-by-half alpha" style="margin-bottom:10px;">
-                    <div class="sharingbottom bottoms"> 
+                    <div class="sharingbottom border-color bottoms"> 
                   	<?php if(!of_get_option('md_social_post_disable_bottom')) {?>
                     	<div class="resdontshow shr"><strong><?php _e('SHARE : ','dronetv');?></strong></div>
                        <?php echo showshareingpost($permalink,@$pimg[0], @$ptitle,false); ?>
