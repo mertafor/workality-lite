@@ -1,7 +1,11 @@
 <?php 
 // GET SELECTED THUMBNAIL SIZE
-$thumb = of_get_option('md_post_featured_img_size');
-
+if($_SESSION['visitor']['thumbnail']) {
+	$thumb = $_SESSION['visitor']['thumbnail'];
+}else{
+	$thumb = of_get_option('md_post_featured_img_size');
+}
+	
 /// CHECK CATEGORY
 if(isset($term)) { 
 	$checkcat = $term;

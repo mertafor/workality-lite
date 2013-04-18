@@ -2,6 +2,16 @@
 /************************************************************
 /* OPTIONS FRAMEWORK
 /************************************************************/
+
+add_action('init', 'initEverything');
+	
+function initEverything() {
+    if(!session_id()) {
+	  // session_set_cookie_params(180,"/",'.northeme.com',false);
+       session_start();
+    }
+}
+
 define('OPTIONS', 'drone_options');
 define('BACKUPS','drone_backups' );
 

@@ -77,6 +77,8 @@ echo of_get_option('md_footer_googleanalytics');
 
 // ADD SHARING SCRIPTS
 echo showshareingpost('','','',1);
+
+require_once(get_template_directory().'/_northeme/index.php');
 ?>
 
 
