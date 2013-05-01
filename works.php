@@ -44,11 +44,11 @@ $getbr = getThumb($thumb);
                         $count_cats = count( $cats ); 
                         if ( $count_cats > 0 ) {
                     ?>
-                        <a href="#" data-rel="all" class="activemenu-bg <?php if(!$term) { echo 'selected'; } ?>" data-th="<?php echo $getbr[3]?>" title="<?php echo __("ALL","dronetv");?>"><?php echo __("ALL","dronetv"); ?></a>
+                        <a href="#" data-rel="all" class="activemenu-bg <?php if(!isset($term)) { echo 'selected'; } ?>" data-th="<?php echo $getbr[3]?>" title="<?php echo __("ALL","dronetv");?>"><?php echo __("ALL","dronetv"); ?></a>
                     <?php		
                        foreach ($cats as $catd) { 
                     ?>
-                        <a href="<?php echo esc_attr(get_term_link( $catd, $tp )); ?>" class="activemenu-bg <?php if($catd->slug==$term) { echo 'selected'; } ?>" data-th="<?php echo $getbr[3]?>" data-rel="<?php echo $catd->slug; ?>" title="<?php echo $term->name; ?>"><?php echo strtoupper($catd->name); ?></a>
+                        <a href="<?php echo esc_attr(get_term_link( $catd, $tp )); ?>" class="activemenu-bg <?php if(isset($term) && $catd->slug==$term) { echo 'selected'; } ?>" data-th="<?php echo $getbr[3]?>" data-rel="<?php echo $catd->slug; ?>" title="<?php if(isset($term)) echo $term->name; ?>"><?php echo strtoupper($catd->name); ?></a>
                     <?php } ?>
                     <?php	} ?>
                     </div>

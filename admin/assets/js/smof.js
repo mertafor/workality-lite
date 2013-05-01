@@ -589,6 +589,59 @@ jQuery(document).ready(function($){
 					
 	});
 	
+	
+	/**	Ajax Transfer (Import/Export) Option */
+	$('#of_migrate_button').live('click', function(){
+	
+		var answer = confirm("Click OK to replace URLs")
+		
+		if (answer){
+	
+			var clickedObject = $(this);
+			var clickedID = $(this).attr('id');
+					
+			var nonce = $('#security').val();
+			
+			var import_data = $('input[name=md_migrate_old]').val();
+			var import_data2 = $('input[name=md_migrate_new]').val();
+		
+			var data = {
+				action: 'of_ajax_post_action',
+				type: 'migrate_works',
+				security: nonce,
+				oldlink: import_data,
+				newlink: import_data2
+			};
+						
+			$.post(ajaxurl, data, function(response) {
+				var fail_popup = $('#of-popup-fail');
+				var success_popup = $('#of-popup-save');
+				//check nonce
+				if(response==-1){ //failed
+					fail_popup.fadeIn();
+					window.setTimeout(function(){
+						fail_popup.fadeOut();                        
+					}, 2000);
+				}		
+				else 
+				{
+					success_popup.fadeIn();
+					window.setTimeout(function(){
+						location.reload();                        
+					}, 1000);
+				}
+							
+			});
+			
+		}
+		
+	return false;
+					
+	});
+	
+	
+	
+	
 	/** AJAX Save Options */
 	$('#of_save').live('click',function() {
 			

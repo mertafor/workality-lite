@@ -150,7 +150,7 @@ function of_admin_head() { ?>
  */
 function of_ajax_callback() 
 {
-	global $options_machine, $of_options;
+	global $options_machine, $of_options, $wpdb;
 
 	$nonce=$_POST['security'];
 	

@@ -138,6 +138,7 @@ if ( ! function_exists( 'getThumb' ) ) {
 			  $after = 3;
 			break;
 		}
+		
 		@$img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $thumbsize );
 		return array($img[0],$class,$thumbsize,$after);
 	}
