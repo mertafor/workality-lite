@@ -6,7 +6,7 @@
 	Author URI: http://northeme.com
 	License: GNU General Public License version 3.0
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html
-	Version: 1.2.1
+	Version: 1.2.2
 	Tags: Portfolio, Work, Clean, Slick, Minimal, Art, Easy to Customize, Custom, Modern, Creative, Design, Personal, Advertising, Agency, Responsive
 	
 	All files are released under the GNU General Public License version 3.0 
@@ -651,8 +651,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	}
 	
 	
-	[class^="social-"],
-	[class*=" social-"] {
+	[class^="social-"] {
 	  display: inline-block;
 	  width: 24px;
 	  height: 24px;
