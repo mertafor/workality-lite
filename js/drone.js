@@ -160,6 +160,8 @@ $(function() {
 		});   
 	
 	
+		if(mdajaxurl.withajax==1) {
+			
 		/// GET POSTS
 		$('a.getworks').live('click',function(e) { 
 		var id = $(this).attr('data-id');
@@ -234,6 +236,8 @@ $(function() {
 		e.preventDefault();
 		});
 		
+		}
+		
 		$('a.getworks-showmsg').live({
 			mouseenter:function() { 
 			var title = $(this).attr('title');
@@ -243,7 +247,6 @@ $(function() {
 			},mouseleave:function() { 
 			$(this).parent().find('span.pname').html('');
 		}});
-		
 		
 		
 		

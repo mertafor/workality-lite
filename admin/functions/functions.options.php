@@ -453,7 +453,20 @@ $of_options[] = 		array(
 						);	
 						
 						
-												
+	
+$of_options[] = array( "name" => "Advanced",
+					"type" => "heading",
+					'icon'=>'wrench');
+									
+
+$of_options[] =			array(
+						'id' => 'md_master_ajax_disable',
+						'type' => 'checkbox',
+						'name' => __('Disable Ajax Navigation', ''), 
+						'desc' => __('By default, this theme is using ajax navigation for Works, which allows to load content without refreshing the page. However, if you wish to disable ajax queries in order to load pages via default HTTP requests, you can activate this option. Also it\'s useful if you\'re having issues with 3rd party plugins.', ''),
+						'std' => '0'// 1 = on | 0 = off
+						);
+											
 										
 	}
 }
