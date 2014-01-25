@@ -89,7 +89,13 @@ if ( ! function_exists( 'md_add_footer' ) ) {
 		wp_register_script( 'drone', get_template_directory_uri() . '/js/drone.js');
 		wp_enqueue_script( 'drone' );
 	
-		wp_localize_script('drone', 'mdajaxurl', array('ajax'=>admin_url( 'admin-ajax.php'),'withajax'=>$wajax));	
+		if(of_get_option('md_master_ajax_disable')) { 
+			$wajax = 0;
+		}else{
+			$wajax = 1;	
+		}
+		
+		cript('drone', 'mdajaxurl', array('ajax'=>admin_url( 'admin-ajax.php'),'withajax'=>$wajax));	
 		
 	}  
 }
