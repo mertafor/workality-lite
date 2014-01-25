@@ -160,7 +160,7 @@ $(function() {
 		});   
 	
 	
-		if(mdajaxurl.withajax==1) {
+		if(mdajaxurl.withajax!=1) {
 			
 		/// GET POSTS
 		$('a.getworks').live('click',function(e) { 

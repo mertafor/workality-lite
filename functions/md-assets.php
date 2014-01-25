@@ -90,12 +90,12 @@ if ( ! function_exists( 'md_add_footer' ) ) {
 		wp_enqueue_script( 'drone' );
 	
 		if(of_get_option('md_master_ajax_disable')) { 
-			$wajax = 0;
+			$wajax = 1;
 		}else{
-			$wajax = 1;	
+			$wajax = 0;	
 		}
 		
-		cript('drone', 'mdajaxurl', array('ajax'=>admin_url( 'admin-ajax.php'),'withajax'=>$wajax));	
+		wp_localize_script('drone', 'mdajaxurl', array('ajax'=>admin_url( 'admin-ajax.php'),'withajax'=>$wajax));	
 		
 	}  
 }
