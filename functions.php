@@ -283,7 +283,7 @@ if ( ! function_exists( 'showSharing' ) ) {
 		
 		
 		foreach($args as $k=>$v) {
-		  echo '<a href="'.$v.'" title="'.ucfirst($k).'" target="_blank"><i class="social-'.$k.'"></i></a>';	
+		  echo '<a href="'.$v.'" title="'.ucfirst($k).'" target="_blank"><i class="norsocial-'.$k.'"></i></a>';	
 		}
 	}                 
 }

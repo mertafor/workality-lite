@@ -651,7 +651,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	}
 	
 	
-	[class^="social-"] {
+	[class^="norsocial-"] {
 	  display: inline-block;
 	  width: 24px;
 	  height: 24px;
@@ -670,66 +670,67 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	  background-image: url("images/glyphicons-halflings-white.png");
 	}
 	
-	.social-facebook {
+	.norsocial-facebook {
 	  background-position: 0px 0;
 	}
-	.social-facebook:hover {
+	.norsocial-facebook:hover {
 	  background-position: 0px -28px;
 	}
-	.social-twitter {
+	.norsocial-twitter {
 	  background-position: -32px 0;
 	}
-	.social-twitter:hover {
+	.norsocial-twitter:hover {
 	  background-position: -32px -28px;
 	}
-	.social-tumblr {
+	.norsocial-tumblr {
 	  background-position: -64px 0;
 	}
-	.social-tumblr:hover {
+	.norsocial-tumblr:hover {
 	  background-position: -64px -28px;
 	}
-	.social-flickr {
+	.norsocial-flickr {
 	  background-position: -96px 0;
 	}
-	.social-flickr:hover {
+	.norsocial-flickr:hover {
 	  background-position: -96px -28px;
 	}
-	.social-pinterest {
+	.norsocial-pinterest {
 	  background-position: -128px 0;
 	}
-	.social-pinterest:hover {
+	.norsocial-pinterest:hover {
 	  background-position: -128px -28px;
 	}
-	.social-vimeo {
+	.norsocial-vimeo {
 	  background-position: -160px 0;
 	}
-	.social-vimeo:hover {
+	.norsocial-vimeo:hover {
 	  background-position: -160px -28px;
 	}
-	.social-google {
+	.norsocial-google {
 	  background-position: -192px 0;
 	}
-	.social-google:hover {
+	.norsocial-google:hover {
 	  background-position: -192px -28px;
 	}
-	.social-linkedin {
+	.norsocial-linkedin {
 	  background-position: -224px 0;
 	}
-	.social-linkedin:hover {
+	.norsocial-linkedin:hover {
 	  background-position: -224px -28px;
 	}
-	.social-behance {
+	.norsocial-behance {
 	  background-position: -256px 0;
 	}
-	.social-behance:hover {
+	.norsocial-behance:hover {
 	  background-position: -256px -28px;
 	}
-	.social-dribbble {
+	.norsocial-dribbble {
 	  background-position: -288px 0;
 	}
-	.social-dribbble:hover {
+	.norsocial-dribbble:hover {
 	  background-position: -288px -28px;
 	}
+	
 	
 	i.menu-icon { 
 	  background:url(images/menu.png) no-repeat; width:18px; height:18px; display: inline-block;
