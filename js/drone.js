@@ -1,23 +1,28 @@
 (function($) {
 	
-		
-	/// VARS
-	var loaded = false;
-	
 	/// DETECT MOBILE
 	var $doc = $(document),
 	Modernizr = window.Modernizr;
 
+	/// VARS
+	var loaded = true;
+
+	history.replaceState({"id":1}, document.title, document.location.href);
+	
+	if($.browser.safari || Modernizr.touch){
+		loaded = false;
+	}
+	
 	/// BACK BUTTONS ACTIVE
-	$(window).bind('popstate', function(event) {
-		if (!Modernizr.touch) {
-			if(!loaded) {
-				loaded = true;
-				return;	
-			}else{
-				window.location =location.pathname;
+	window.addEventListener('popstate', function(event) {
+	  var dlink = document.URL;
+		dlink = dlink.split('#');
+		if(loaded) {
+			if (typeof dlink[1] == 'undefined' || typeof dlink[1] == '') {
+				window.location =document.URL;
 			}
 		}
+		loaded = true;
 	});
 	
 	
