@@ -297,6 +297,8 @@ if ( ! function_exists( 'save_work_custom_values' ) ) {
 				foreach($_POST as $inp => $val) {
 					if(strpos($inp,'work-')!==false) {
 						
+					$itworks=1;
+						
 					if($inp=='work-media' || $inp=='work-media-caption' || $inp=='work-media-video') {
 						$varm = addslashes( serialize( $val));
 					}else{
@@ -306,13 +308,15 @@ if ( ! function_exists( 'save_work_custom_values' ) ) {
 					update_post_meta($post->ID, $inp, $varm);
 					}
 				}	
-				if(isset($_POST['work-media'])) {
-					if(count($_POST['work-media'])==0) {
+				
+				if(isset($itworks)) {	
+					if(!isset($_POST['work-media'])) {
 						update_post_meta($post->ID, 'work-media', '');	
 						update_post_meta($post->ID, 'work-media-caption', '');	
 						update_post_meta($post->ID, 'work-media-video', '');	
 					}
 				}
+				
 		}	
 		
 	}

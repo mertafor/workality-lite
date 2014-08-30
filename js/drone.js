@@ -7,33 +7,34 @@
 	/// VARS
 	var loaded = true;
 
-	history.replaceState({"id":1}, document.title, document.location.href);
-	
-	if($.browser.safari || Modernizr.touch){
-		loaded = false;
+	if(history.replaceState) {
+		history.replaceState({"id":1}, document.title, document.location.href);
 	}
 	
 	/// BACK BUTTONS ACTIVE
-	window.addEventListener('popstate', function(event) {
+	$(window).on("popstate", function(e) {
 	  var dlink = document.URL;
 		dlink = dlink.split('#');
-		if(loaded) {
-			if (typeof dlink[1] == 'undefined' || typeof dlink[1] == '') {
-				window.location =document.URL;
-			}
+		
+		if(!e.originalEvent.state.id) return;
+		
+		if (typeof dlink[1] == 'undefined' || typeof dlink[1] == '') {
+			window.location =document.URL;
 		}
+		
 		loaded = true;
 	});
 	
 	
 	var bid = 1;
 	
-	function updatelinks(m) { 
+	function updatelinks(m) {
 		if(history.pushState && history.replaceState) {
 			bid++;
 			history.pushState({"id":bid}, '', m);
-		}	
+		}
 	}
+	
 	
 	/// LOAD SOCIAL SHARING PLUGINS
 	function socialRevive() {
