@@ -241,7 +241,7 @@ function of_ajax_callback()
 	elseif($save_type == 'import_options'){
 			
 		$data = $_POST['data'];
-		$data = unserialize(base64_decode($data)); //100% safe - ignore theme check nag
+		$data = unserialize($data); //100% safe - ignore theme check nag
 		update_option(OPTIONS, $data);
 		
 		die('1'); 

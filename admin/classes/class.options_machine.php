@@ -506,7 +506,7 @@ class Options_Machine {
 				case 'transfer':
 				
 					$instructions = $value['desc'];
-					$output .= '<textarea id="export_data" rows="8">'.base64_encode(serialize(@$data)) /* 100% safe - ignore theme check nag */ .'</textarea>'."\n";
+					$output .= '<textarea id="export_data" rows="8">'.(serialize(@$data)) /* 100% safe - ignore theme check nag */ .'</textarea>'."\n";
 					$output .= '<a href="#" id="of_import_button" class="button" title="Restore Options">Import Options</a>';
 				
 				break;

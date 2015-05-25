@@ -65,19 +65,19 @@
                       </div>  
                       <div class="fifteensp columns offset-by-half alpha pinfo">
                            <div class="four columns alpha">
-                           		<?php if($categories!="") {?>
+                           		<?php if(isset($categories) && $categories!="") {?>
                                 <strong><?php _e('Creative Fields','dronetv')?></strong> <br />
                                 <?php echo $categories; ?>  
                                 <?php } ?>
                           </div> 
                           <div class="four columns">
-                           		<?php if($work_client!="") {?>
+                           		<?php if(isset($work_client) && $work_client!="") {?>
                                 <strong><?php _e('Client','dronetv')?></strong> <br />
                                 <?php echo $work_client; ?>
                                 <?php } ?>
                           </div> 
                            <div class="four columns">
-                           		<?php if($work_url!="") {?>
+                           		<?php if(isset($work_url) && $work_url!="") {?>
                                 <strong><?php _e('Project URL','dronetv')?></strong> <br />
                                 <a href="<?php echo $work_url; ?>" target="_blank"><?php 
 								$work_url = str_replace('http://','',$work_url);

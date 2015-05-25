@@ -61,7 +61,7 @@ if (!function_exists('of_options'))
 
 		//Background Images Reader
 		$bg_images_path = STYLESHEETPATH. '/images/bg/'; // change this to where you store your bg images
-		$bg_images_url = get_bloginfo('template_url').'/images/bg/'; // change this to where you store your bg images
+		$bg_images_url = get_template_directory_uri().'/images/bg/'; // change this to where you store your bg images
 		$bg_images = array();
 		
 		if ( is_dir($bg_images_path) ) {
