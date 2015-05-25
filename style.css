@@ -86,7 +86,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 /* #Basic Styles
 ================================================== */
 	body {
-		background: #f0f0f0;
+  		background: #F0F0F0 url(images/bgpatterns/light_toast.png);
 		font: 14px/22px "Helvetica Neue", Arial, Helvetica, sans-serif;
 		color: #444;
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
@@ -1965,7 +1965,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	}
 	.navibg { 
 		background:url(images/whitebg.png);
-		border-bottom:1px solid #bbb;
+		border-bottom:1px solid #ddd;
 	}
 	.navibg.withall {
 		background:none
@@ -1989,7 +1989,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		margin:21px 0px 15px 0px; 
 	}
 	.navibg.withall div.navigate a { 
-		background-color:#e5e5e5;
 		color:#777;
 		letter-spacing:0;
 		font-size:11px;
@@ -2006,8 +2005,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
         transition: background 0.3s linear;
 	} 
 	.navibg.withall div.navigate a:hover, .navibg.withall div.navigate a.selected { 
-		background-color:#777;
-		color:#fff;
+		color:#000;
 	}
 	a.navigate { 
 		background:url(images/arrows.png) no-repeat; 

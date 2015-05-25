@@ -130,8 +130,8 @@ if(!is_archive()) {
 			<?php $p++; endwhile; ?>
 		
                         <div class="navigation-bottom">
-                            <?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Back', 'dronetv' ) ); ?>
-                            <?php next_posts_link( __( 'Next <span class="meta-nav">&rarr;</span>', 'dronetv' ) ); ?>
+                            <?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older Posts', 'dronetv' ) ); ?>
+                            <?php previous_posts_link( __( 'Newer Posts <span class="meta-nav">&rarr;</span>', 'dronetv' ) ); ?>
                         </div>
     </div>
 
