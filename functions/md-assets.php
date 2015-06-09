@@ -69,8 +69,6 @@ if ( ! function_exists( 'md_add_wphead' ) ) {
 		wp_enqueue_script( 'modernizr' );
 		
 		// JQuery (Remove bundle ver. and include new)
-		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js' );
 		wp_enqueue_script( 'jquery' );
 		
 		// INCLUDE JS
