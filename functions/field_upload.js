@@ -33,14 +33,34 @@ jQuery(document).ready(function(){
 	 *
 	 */
 
+	var tgm_media_frame;
+	
 	jQuery('.nhp-opts-upload').click(function() {
-	 post_id = jQuery('#post_ID').val();
-	 tb_show('', 'media-upload.php?post_id='+post_id+'&amp;type=image&amp;TB_iframe=true');
-	 return false;
+		if ( tgm_media_frame ) {
+			tgm_media_frame.open();
+			return;
+		  }
+		
+		  tgm_media_frame = wp.media.frames.tgm_media_frame = wp.media({
+			multiple: true,
+			library: {
+			  type: 'image'
+			},
+		  });
+		
+		  tgm_media_frame.on('select', function(){
+			var selection = tgm_media_frame.state().get('selection');
+			selection.map( function( attachment ) {
+				attachment = attachment.toJSON();
+				addto_Composition(attachment.url);
+			});
+		  });
+		
+		  tgm_media_frame.open();
 	});
 	
-	window.send_to_editor = function(html) {
-		imgurl = jQuery('img',html).attr('src');
+	function addto_Composition(imgs) {
+		imgurl = imgs;
 		divs++;
 		var ids = 'new-md-field-'+divs;
 		var cont = '<div id="d'+ids+'" class="imgarr" style="display:none">\

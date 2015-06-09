@@ -169,6 +169,7 @@ $(function() {
 		if(mdajaxurl.withajax!=1) {
 			
 		/// GET POSTS
+		/*
 		$('a.getworks').live('click',function(e) { 
 		var id = $(this).attr('data-id');
 		var token = $(this).attr('data-token');
@@ -196,7 +197,7 @@ $(function() {
 		});
 		e.preventDefault();
 		});
-		
+		*/
 		
 		$('a.gohome').live('click',function(e) { 
 		var token = $(this).attr('data-token');
@@ -219,7 +220,7 @@ $(function() {
 		e.preventDefault();
 		});	
 		
-		
+		/*
 		$('a.getworks-nextback').live('click',function(e) { 
 		var id = $(this).attr('data-id');
 		var token = $(this).attr('data-token');
@@ -241,6 +242,7 @@ $(function() {
 		});
 		e.preventDefault();
 		});
+		*/
 		
 		}
 		
