@@ -47,7 +47,7 @@
 	<meta name="description" content="<?php echo $descrip; ?>">
 	<meta name="keywords" content="<?php echo of_get_option('md_header_seo_keywords'); ?>">
     
-	<meta name="author" content="drone.tv" />
+	<meta name="author" content="northeme.com" />
 
 	<!-- Mobile Specific Metas
   ================================================== -->
@@ -64,17 +64,6 @@
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<!-- Favicons
-	================================================== -->
-	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri() ?>/images/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri() ?>/images/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri() ?>/images/apple-touch-icon-114x114.png">
-        
-	<!-- RSS
-  ================================================== -->
-  	<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> Feed" href="<?php echo home_url(); ?>/rss">
-  	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    
     
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
 	

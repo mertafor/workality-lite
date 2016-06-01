@@ -19,16 +19,18 @@
                     <span class="footertext">
 					<?php echo $ftext = of_get_option('md_footer_text'); if($ftext!="") { echo '<br />'; }?> 
                     <small>
-                    Powered by <a href="http://www.wordpress.org" target="_blank">Wordpress</a>. <a href="http://www.northeme.com/themes/workality-lite" target="_blank">Workality Theme</a> by <a href="http://www.northeme.com" target="_blank">Northeme</a>
+                    Powered by <a href="http://www.wordpress.org" target="_blank">WordPress</a>. <a href="https://northeme.com/theme/workality-lite" target="_blank">Workality Theme</a> by <a href="https://northeme.com" target="_blank">Northeme</a>
                     </small>
                     </span>
                     <hr class="resshow border-color" />
                     <span class="social"><?php showSharing(); ?></span>
                     
                     <hr class="footer border-color" />
+                    
                     <?php 
 						if($footer_widgets_disabled!=1) {	
 					?>
+                    
                     	<?php 
                         	for($i=1;$i <= $footer_widgets_columns; $i++) {
                         ?>
