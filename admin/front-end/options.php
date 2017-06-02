@@ -18,6 +18,13 @@
 
 	<form id="of_form" method="post" action="<?php echo esc_attr( $_SERVER['REQUEST_URI'] ) ?>" enctype="multipart/form-data" >
 	
+        <a href="https://northeme.com/theme/workality-plus" class="go-premium" target="_blank">
+        	<i class="fa fa-star"></i>
+            Upgrade to <strong class="link">Workality Plus</strong> and access full featured theme options, content builder, sliders, premium support and more!
+            <br>
+            <small>Here is an exclusive promo code to upgrade Workality Plus with <strong>20% discount!</strong> : <strong class="promo">UPGRADE20</strong></small> 
+        </a>
+        
 		<div id="header">
 		
 			<div class="logo">
@@ -30,11 +37,12 @@
 			<div class="clear"></div>
 		
     	</div>
+        
 
 		<div id="info_bar">
 		
-            <a href="http://northeme.com/themes" target="_blank" class="nor">
-            	→ NEW THEMES
+            <a href="https://northeme.com/themes" target="_blank" class="nor">
+            	→ VIEW NEW THEMES
             </a>
             		
 			<img style="display:none" src="<?php echo ADMIN_DIR; ?>assets/images/loading-bottom.gif" class="ajax-loading-img ajax-loading-img-bottom" alt="Working..." />

@@ -12,7 +12,6 @@
 			$columnclass = "sixteen columns";
 		}
 	?>
-        <br class="clear" />
         <footer>	
                 <div class="sixteen columns">
                     <hr class="footer border-color" />
@@ -56,8 +55,10 @@
     </div> 
     <div class="mobilemenu">
             <?php if(!of_get_option('md_header_disable_search')) : ?>
-              <form>
-            	<input type="text" class="medium" value=""><button type="submit"><i class='icon-search'></i></button>
+              <form class="">
+              	<div class="mobile-search">
+            		<input type="text" name="s" class="medium" value=""><button type="submit"><i class='fa fa-search'></i></button>
+                </div>
               </form>
             <?php endif; ?>
             
@@ -71,7 +72,7 @@
 			 ?>  
     </div>
     
-    <a href="#" class="backtotop"></a>
+    <a href="#" class="backtotop"><i class="fa fa-angle-up"></i></a>
 	<div class="ajaxloader"><img src="<?php echo get_template_directory_uri();?>/images/loader.gif" /></div>
 <?php 
 // ADD ANALYTICS CODE

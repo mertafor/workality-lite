@@ -54,8 +54,8 @@
 	var menuclosed = true;
 	function closeMobileMenu() { 
 		$('.mobilemenu').animate({ left: '-75%' }, 0 );
-	    $('a.navbarbutton').find('i').removeClass('menu-remove');
-	    $('a.navbarbutton').find('i').addClass('menu-icon');
+	    $('a.navbarbutton').find('i').removeClass('fa-times');
+	    $('a.navbarbutton').find('i').addClass('fa-bars');
 		menuclosed = true;
 	}
 	
@@ -341,13 +341,13 @@ $(function() {
 		function(e) { 
 		   if(menuclosed) {
 		   $('.mobilemenu').css('left','0');
-		   $(this).find('i').removeClass('menu-icon');
-		   $(this).find('i').addClass('menu-remove');
+		   $(this).find('i').removeClass('fa-bars');
+		   $(this).find('i').addClass('fa-times');
 		   menuclosed = false;
 		   }else{
 		   $('.mobilemenu').css('left','-75%');
-		   $(this).find('i').removeClass('menu-remove');
-		   $(this).find('i').addClass('menu-icon');
+		   $(this).find('i').removeClass('fa-times');
+		   $(this).find('i').addClass('fa-bars');
 		   menuclosed = true;
 		   }
 		   e.preventDefault();

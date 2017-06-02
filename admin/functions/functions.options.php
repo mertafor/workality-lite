@@ -122,15 +122,15 @@ $of_options[] =   		array(
 						'id' => 'md_header_logo_text',
 						'type' => 'text',
 						'name' => __('Site Logo Text', ''),
-						'desc' => __('If you don\'t add any logo image, this text will be shown as logo', ''),
+						'desc' => __('If you don\'t add a logo image, this text will be displayed', ''),
 						'std' => get_bloginfo('name')
 						);
 	
 $of_options[] = 		array(
 						'id' => 'md_header_logo_subtext',
 						'type' => 'text',
-						'name' => __('Site Logo Sub-Text', ''),
-						'desc' => __('This text will be shown below your logo', ''),
+						'name' => __('Site Tagline', ''),
+						'desc' => __('It will be displayed beneath the logo', ''),
 						'std' => ''
 						);
 

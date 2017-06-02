@@ -20,19 +20,18 @@
 
 		<div class="columns navibg border-color">
             <div class="four columns alpha">
-            	<h3><?php _e('Works','dronetv'); ?></h3>
+            	<h3><a href="<?php echo get_home_url(); ?>"><i class="fa fa-arrow-left"></i><?php _e('Works','dronetv'); ?></a></h3>
             </div>
             
             <div class="twelve columns omega">
             	<div class="navigate">
                 	<hr class="resshow border-color" /> 
                     <span class="pname"></span>
-                    <a href="<?php echo get_home_url(); ?>" data-title="All" title="<?php echo __("All Projects","dronetv");?>" data-type="works" data-token="<?php echo $token?>" class="navigate parent getworks-showmsg gohome">&nbsp;</a>
                     <?php if(!empty( $prev_post['ID'] )) { ?>
-                    <a href="<?php echo get_permalink($prev_post['ID']); ?>" data-type="works" data-token="<?php echo $token?>" data-id="<?php echo $prev_post['ID']?>" title="<?php echo htmlspecialchars($prev_post['post_title'])?>" class="navigate back getworks-nextback getworks-showmsg">&nbsp;</a>
+                    <a href="<?php echo get_permalink($prev_post['ID']); ?>" data-type="works" data-token="<?php echo $token?>" data-id="<?php echo $prev_post['ID']?>" title="<?php echo htmlspecialchars($prev_post['post_title'])?>" class="navigate back getworks-nextback getworks-showmsg"><i class="fa fa-angle-left"></i></a>
                     <?php } ?>
                     <?php if(!empty( $next_post['ID'] )) { ?>
-                    <a href="<?php echo get_permalink($next_post['ID']); ?>" data-type="works" data-token="<?php echo $token?>" data-id="<?php echo $next_post['ID']?>" title="<?php echo htmlspecialchars($next_post['post_title'])?>" class="navigate next getworks-nextback getworks-showmsg">&nbsp;</a>
+                    <a href="<?php echo get_permalink($next_post['ID']); ?>" data-type="works" data-token="<?php echo $token?>" data-id="<?php echo $next_post['ID']?>" title="<?php echo htmlspecialchars($next_post['post_title'])?>" class="navigate next getworks-nextback getworks-showmsg"><i class="fa fa-angle-right"></i></a>
 					<?php } ?>
             	</div>
             </div>	

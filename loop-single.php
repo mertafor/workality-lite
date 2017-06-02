@@ -26,10 +26,10 @@ $theblogtitle = of_get_option('md_theblog_title');
                 	<hr class="resshow border-color" /> 
                     <span class="pname"></span>
                     <?php if(!empty( $prev_post['ID'])) { ?>
-                    <a href="<?php echo get_permalink($prev_post['ID']); ?>" data-type="blog" data-token="<?php echo $token?>" data-id="<?php echo $prev_post['ID']?>" title="<?php echo htmlspecialchars($prev_post['post_title'])?>" class="navigate back getworks-showmsg">&nbsp;</a>
+                    <a href="<?php echo get_permalink($prev_post['ID']); ?>" data-type="blog" data-token="<?php echo $token?>" data-id="<?php echo $prev_post['ID']?>" title="<?php echo htmlspecialchars($prev_post['post_title'])?>" class="navigate back getworks-showmsg"><i class="fa fa-angle-left"></i></a>
                     <?php } ?>
                     <?php if(!empty( $next_post['ID'] )) { ?>
-                    <a href="<?php echo get_permalink($next_post['ID']); ?>" data-type="blog" data-token="<?php echo $token?>" data-id="<?php echo $next_post['ID']?>" title="<?php echo htmlspecialchars($next_post['post_title'])?>" class="navigate next getworks-showmsg">&nbsp;</a>
+                    <a href="<?php echo get_permalink($next_post['ID']); ?>" data-type="blog" data-token="<?php echo $token?>" data-id="<?php echo $next_post['ID']?>" title="<?php echo htmlspecialchars($next_post['post_title'])?>" class="navigate next getworks-showmsg"><i class="fa fa-angle-right"></i></a>
 					<?php } ?>
             	</div>
             </div>	
