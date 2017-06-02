@@ -421,6 +421,61 @@ if ( ! function_exists( 'drone_comments' ) ) {
 }
 
 
+
+/************************************************************
+/* Page Header
+/************************************************************/
+	
+	function get_page_headers() {
+		global $post;
+		if(isset($post->ID)) {
+		  ?>
+             <div class="columns navibg withall border-color">
+                <div class="sixteen columns alpha omega">
+                    <h3>
+                        <?php echo get_the_title($post->ID); ?>
+                    </h3>
+                </div>
+            </div>
+          
+          <?php
+		}
+	}
+
+/************************************************************
+/* Admin Function Includes
+/************************************************************/
+	if(is_admin()) {
+		global $pagenow; 
+		if($pagenow=='options-reading.php') {
+			function nor_add_to_reading_page() { 
+				?>
+				<style type="text/css">
+					/* Do NOT use Posts Page option notification */
+					.nor-no-posts-page { 
+						background:#cc0000;
+						color:#fff;
+						padding:3px 10px;
+						display:inline-block;
+						margin:15px 0;
+						font-size: 13px;
+					}
+				</style>
+				<script type="text/javascript">
+					//// ONLOAD	
+					jQuery(document).ready(function($){
+						// Add Posts Page notification
+						jQuery('#front-static-pages [name=page_for_posts]').parent().append('<br class="clear"><div class="nor-no-posts-page"><strong>Important :</strong> Do <u>NOT</u> set <strong>Posts page</strong> option. Blog page can be created with Blog template at Pages.<br>Leave Posts page option unset to prevent conflicts.</div>');
+					});
+				</script>
+			<?php
+			}
+		
+			add_action('admin_footer', 'nor_add_to_reading_page');
+		}
+	}
+	
+
 /************************************************************
 /* Admin Function Includes
 /************************************************************/

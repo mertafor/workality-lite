@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 
+	<?php get_page_headers(); ?>
+    
 	<br class="clear" />
     
 	<div class="defaultpage">
-  
   
 	<?php if ( have_posts() ) { the_post(); ?>
         <div class="two-thirds column">

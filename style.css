@@ -1395,6 +1395,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	a.navbarbutton { display:none; }
 	div.defaultpage { 
 		margin-top:25px;
+		display:inline-block;
+		width:100%;
 	}
 	a.main-logo { 
 		font-size:48px; 
@@ -2107,7 +2109,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	/* FOOTER STYLES */
 	
 	footer { 
-		margin-top:20px;
 		display:inline-block;
 		width:100%;
 	}
