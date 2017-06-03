@@ -74,10 +74,10 @@ if ( ! function_exists( 'works_additional_fields' ) ) {
 						),
 						array(
 							'type'=>'select',
-							'title'=>'Project Description Positioning',
+							'title'=>'Project Description Alignment',
 							'name'=>'work-desc-position',
 							'desc'=>'',
-							'options'=>array('top'=>'Top of the Project', 'bottom'=>'Bottom of the project')
+							'options'=>array('top'=>'Display before the Images / Videos', 'bottom'=>'Display after the Images / Videos')
 						)
 				);
 		return md_create_fields($args);
