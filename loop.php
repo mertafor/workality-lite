@@ -111,18 +111,18 @@ if(!is_archive()) {
                        
 					   <?php } ?>	
                    	  <div class="bottom">
-                     	<a href="<?php the_permalink() ?>" class="activemenu-bg readmore" data-type="blog" data-id="<?php echo $post->ID?>" data-token="<?php echo $token?>"><?php _e('Read More...','dronetv'); ?></a>
-					  	
                         <span class="loop-tags">
                         <?php 
 							$posttags = get_the_tags();
 								if ($posttags) {
 								  foreach($posttags as $tag) {
-									echo '<a href="'.get_tag_link($tag->term_id).'" class="tags border-color">'.$tag->name . '</a>';
+									echo '<a href="'.get_tag_link($tag->term_id).'" class="tags border-color">#'.$tag->name . '</a>';
 								  }
 								}
 						?>
                         </span>
+                     	<a href="<?php the_permalink() ?>" class="activemenu-bg readmore" data-type="blog" data-id="<?php echo $post->ID?>" data-token="<?php echo $token?>"><?php _e('Read More...','dronetv'); ?></a>
+					  	
 					  </div>
                        
                    </div>

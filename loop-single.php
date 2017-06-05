@@ -61,7 +61,7 @@ $theblogtitle = of_get_option('md_theblog_title');
 							$posttags = get_the_tags();
 								if ($posttags) {
 								  foreach($posttags as $tag) {
-									echo '<a href="'.get_tag_link($tag->term_id).'" class="tags border-color">'.$tag->name . '</a>';
+									echo '<a href="'.get_tag_link($tag->term_id).'" class="tags border-color">#'.$tag->name . '</a>';
 								  }
 								}
 						?>
