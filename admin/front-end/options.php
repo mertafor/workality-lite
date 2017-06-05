@@ -41,8 +41,8 @@
 
 		<div id="info_bar">
 		
-            <a href="https://northeme.com/themes" target="_blank" class="nor">
-            	→ VIEW NEW THEMES
+            <a href="https://northeme.com/theme-docs/?theme=workality-lite" target="_blank" class="nor" style="color:#ffcc33;">
+            	→ THEME DOCUMENTATION
             </a>
             		
 			<img style="display:none" src="<?php echo ADMIN_DIR; ?>assets/images/loading-bottom.gif" class="ajax-loading-img ajax-loading-img-bottom" alt="Working..." />
