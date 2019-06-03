@@ -5,6 +5,61 @@
  * inside SMOF
  */
 
+
+
+
+	jQuery(document).ready(function ($) {
+
+			function mediaUploader(bid) {
+
+				var tgm_media_frame;
+
+				if (tgm_media_frame) {
+					tgm_media_frame.open();
+					return;
+				}
+
+				tgm_media_frame = wp.media.frames.tgm_media_frame = wp.media({
+					multiple: true,
+					library: {
+						type: 'image'
+					},
+				});
+
+				tgm_media_frame.on('select', function () {
+					var selection = tgm_media_frame.state().get('selection');
+					selection.map(function (attachment) {
+						attachment = attachment.toJSON();
+
+						$('[data-action="' + bid + '-image"]').removeClass('nor-dontshow');
+						$('[data-action="' + bid + '-remove"]').removeClass('nor-dontshow');
+
+						if ($('[data-action="' + bid + '-container"] img').length > 0) {
+							$('[data-action="' + bid + '-container"] img').attr('src', attachment.url);
+						} else {
+							gurl = attachment.url.split('/');
+							$('[data-action="' + bid + '-container"] .nor-image-upload-margin').html(gurl[gurl.length - 1]);
+						}
+
+						$('[data-action="' + bid + '-container"] input').val(attachment.url);
+
+
+					});
+				});
+
+				tgm_media_frame.open();
+
+			}
+			
+		$('body').on('click', '.nor-upload-button', function (e) {
+
+			mediaUploader($(this).data('id'));
+			e.preventDefault();
+
+		});
+	});
+
+
 jQuery.noConflict();
 
 var googf = false;

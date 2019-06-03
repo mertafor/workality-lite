@@ -13,15 +13,17 @@
 	
 	/// BACK BUTTONS ACTIVE
 	$(window).on("popstate", function(e) {
-	  var dlink = document.URL;
+		var dlink = document.URL;
 		dlink = dlink.split('#');
-		
-		if(!e.originalEvent.state.id) return;
-		
+
 		if (typeof dlink[1] == 'undefined' || typeof dlink[1] == '') {
-			window.location =document.URL;
+			if (!e.originalEvent.state) {
+				return;
+			}
+
+			window.location = document.URL;
 		}
-		
+
 		loaded = true;
 	});
 	

@@ -1,10 +1,55 @@
------------------------------------------------------------------------------------
-/* Admin styles
-/*-----------------------------------------------------------------------------------*/ 
 
-.updated, .error {
-	display:none!important
-} /* disable the admin notices */
+#of_container .nor-button {
+	font-size: 11px;
+	font-weight: normal;
+	background-color: #000;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	color: #f0f0f0;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	line-height: normal;
+	padding: 8px 12px;
+	border: none;
+}
+
+#of_container .nor-button:focus,
+#of_container .nor-button:hover {
+	color: #f0f0f0;
+}
+
+#of_container .nor-button.white-low {
+	background-color: #f0f0f0;
+	font-weight: 300;
+	color: #666;
+}
+
+#of_container .nor-dontshow {
+	display: none;
+}
+
+#of_container .nor-image-upload {
+	margin: 20px 0 20px 0;
+	border-radius: 5px;
+	padding: 10px;
+	border: 1px solid #EEE;
+	border-top: 2px solid #ccc;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #fff;
+}
+
+#of_container .nor-image-upload img {
+	max-height: 900px;
+	max-width: 250px;
+	display: block
+}
+
+
+
 #of_container {
 	margin: 15px;
 	width: 785px;

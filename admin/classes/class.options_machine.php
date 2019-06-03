@@ -551,35 +551,25 @@ class Options_Machine {
 	 * @return string
 	 */
 	public static function optionsframework_uploader_function($id,$std,$mod){
-	
+		
 	    $data =get_option(OPTIONS);
 		
-		$uploader = '';
-	    $upload = @$data[$id];
+		$dontshow = '';
+		$t_value = @$data[$id];
+		if(!$t_value) { $dontshow = 'nor-dontshow'; }
 		$hide = '';
 		
-		if ($mod == "min") {$hide ='hide';}
-		
-	    if ( $upload != "") { $val = $upload; } else {$val = $std;}
-	    
-		$uploader .= '<input class="'.$hide.' upload of-input" name="'. $id .'" id="'. $id .'_upload" value="'. $val .'" />';	
-		
-		$uploader .= '<div class="upload_button_div"><span class="button image_upload_button" id="'.$id.'">'._('Upload').'</span>';
-		
-		if(!empty($upload)) {$hide = '';} else { $hide = 'hide';}
-		$uploader .= '<span class="button image_reset_button '. $hide.'" id="reset_'. $id .'" title="' . $id . '">Remove</span>';
-		$uploader .='</div>' . "\n";
-	    $uploader .= '<div class="clear"></div>' . "\n";
-		if(!empty($upload)){
-			$uploader .= '<div class="screenshot">';
-	    	$uploader .= '<a class="of-uploaded-image" href="'. $upload . '">';
-	    	$uploader .= '<img class="of-option-image" id="image_'.$id.'" src="'.$upload.'" alt="" />';
-	    	$uploader .= '</a>';
-			$uploader .= '</div>';
-			}
-		$uploader .= '<div class="clear"></div>' . "\n"; 
-	
-		return $uploader;
+		return $output = '<div data-action="'.$id.'-container">
+					  <input type="hidden" name="'.$id.'" value="'.$t_value.'">
+					  <a href="#" data-id="'.$id.'" data-action="'.$id.'-upload" class="nor-upload-button gray nor-button"><i class="fa fa-upload"></i> UPLOAD</a>
+							<a href="#" data-id="'.$id.'" data-action="'.$id.'-remove" class="nor-image-remove-button white-low nor-button '.$dontshow.'" style="margin-left:2px;">
+							<i class="fa fa-times"></i> REMOVE</a>
+							<div data-id="'.$id.'" data-action="'.$id.'-image" class="nor-image-upload nor-image-upload-margin '.$dontshow.'">
+								 <img src="'.( $t_value ).'">
+							</div>
+					</div>
+					';
+
 	
 	}
 

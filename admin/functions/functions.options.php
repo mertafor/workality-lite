@@ -114,7 +114,7 @@ $of_options[] =   		array(
 						'id' => 'md_header_logo',
 						'type' => 'upload',
 						'name' => __('Site Logo', ''), 
-						'desc' => __('Click browse button and upload image. In order to add image into your site, click "Insert into post" button', ''),
+						'desc' => __('Click upload button and select / upload an image at WP Media Library', ''),
 						'std'=>''
 						);
 						
@@ -373,13 +373,7 @@ $of_options[] = 		array(
 						'desc' => __('E.g. http://vimeo.com/username', ''),
 						'std' => ''
 						);		
-$of_options[] = 		array(
-						'id' => 'md_social_google',
-						'type' => 'text',
-						'name' => __('Google+', ''),
-						'desc' => __('E.g. https://plus.google.com/YourID', ''),
-						'std' => ''
-						);		
+
 $of_options[] = 		array(
 						'id' => 'md_social_linkedin',
 						'type' => 'text',

@@ -97,6 +97,8 @@ function of_load_only()
 	wp_enqueue_script('cookie', ADMIN_DIR . 'assets/js/cookie.js', 'jquery');
 	wp_enqueue_script('smof', ADMIN_DIR .'assets/js/smof.js', array( 'jquery' ));
 	wp_localize_script('smof', 'wpurl', array( 'siteurl' => get_template_directory_uri() ));
+
+	wp_enqueue_media();
 }
 
 /**
