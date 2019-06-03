@@ -16,7 +16,7 @@
                 <div class="sixteen columns">
                     <hr class="footer border-color" />
                     <span class="footertext">
-					<?php echo $ftext = of_get_option('md_footer_text'); if($ftext!="") { echo '<br />'; }?> 
+					            <?php echo $ftext = do_shortcode( of_get_option('md_footer_text') ); if($ftext!="") { echo '<br />'; }?> 
                     <small>
                     Powered by <a href="http://www.wordpress.org" target="_blank">WordPress</a>. <a href="https://northeme.com/theme/workality-lite" target="_blank">Workality Theme</a> by <a href="https://northeme.com" target="_blank">Northeme</a>
                     </small>
