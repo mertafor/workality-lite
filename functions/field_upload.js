@@ -1,18 +1,18 @@
 jQuery(document).ready(function(){
 	var divs = 1;
-	
+
 	jQuery('.get-datepicker').datepicker();
-	
+
 	jQuery('#md-sortable-media').sortable();
-		
-				
-					
+
+
+
 	/*
 	 *
 	 * UPLOAD VIDEOS
 	 *
 	 */
-	jQuery('a.add-more-videos').live('click',function() { 
+	jQuery('body').on('click', 'a.add-more-videos', function() {
 		divs++;
 		var ids = 'new-md-field-'+divs;
 		var cont = '<div id="vdiv'+ids+'" class="imgarr"><span class="imgside"> \
@@ -23,10 +23,10 @@ jQuery(document).ready(function(){
 					</span><br class="clear"></div>';
 		jQuery('#md-sortable-media').prepend(cont);
 	});
-	
-	
-		
-					
+
+
+
+
 	/*
 	 *
 	 * UPLOAD IMAGES
@@ -34,20 +34,20 @@ jQuery(document).ready(function(){
 	 */
 
 	var tgm_media_frame;
-	
+
 	jQuery('.nhp-opts-upload').click(function() {
 		if ( tgm_media_frame ) {
 			tgm_media_frame.open();
 			return;
 		  }
-		
+
 		  tgm_media_frame = wp.media.frames.tgm_media_frame = wp.media({
 			multiple: true,
 			library: {
 			  type: 'image'
 			},
 		  });
-		
+
 		  tgm_media_frame.on('select', function(){
 			var selection = tgm_media_frame.state().get('selection');
 			selection.map( function( attachment ) {
@@ -55,10 +55,10 @@ jQuery(document).ready(function(){
 				addto_Composition(attachment.url);
 			});
 		  });
-		
+
 		  tgm_media_frame.open();
 	});
-	
+
 	function addto_Composition(imgs) {
 		imgurl = imgs;
 		divs++;
@@ -71,11 +71,11 @@ jQuery(document).ready(function(){
 					</span><br class="clear"></div>';
 		jQuery('#md-sortable-media').append(cont);
 		jQuery('#d'+ids).fadeIn('slow');
-		
+
 		tb_remove();
 	}
 
-	jQuery('.admin-upload-remove').live('click',function(){
+	jQuery('body').on('click', '.admin-upload-remove', function(){
 		jQuery(this).parent().parent().fadeOut('slow',function() {
 		jQuery(this).remove();
 		});
@@ -83,18 +83,18 @@ jQuery(document).ready(function(){
 
 
 
-	
-					
+
+
 	/*
 	 *
 	 * COLOR PICKER
 	 *
 	 */
-	 
-		
+
+
 	jQuery('.colorSelector').each(function(){
 			var Othis = this; //cache a copy of the this variable for use inside nested function
-				
+
 			jQuery(this).ColorPicker({
 					color: '#ff0000',
 					onShow: function (colpkr) {
@@ -108,11 +108,11 @@ jQuery(document).ready(function(){
 					onChange: function (hsb, hex, rgb) {
 						jQuery(Othis).children('div').css('backgroundColor', '#' + hex);
 						jQuery(Othis).next('input').attr('value','#' + hex);
-						
+
 					}
 			});
-				  
+
 	}); //end color picker
-	
-	
+
+
 });

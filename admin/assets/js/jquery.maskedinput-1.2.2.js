@@ -2,11 +2,11 @@
 /*
 	Masked Input plugin for jQuery
 	Copyright (c) 2007-2009 Josh Bush (digitalbush.com)
-	Licensed under the MIT license (http://digitalbush.com/projects/masked-input-plugin/#license) 
+	Licensed under the MIT license (http://digitalbush.com/projects/masked-input-plugin/#license)
 	Version: 1.2.2 (03/09/2009 22:39:06)
 */
 (function($) {
-	var pasteEventName = ($.browser.msie ? 'paste' : 'input') + ".mask";
+	var pasteEventName = 'input' + ".mask";
 	var iPhone = (window.orientation != undefined);
 
 	$.mask = {
@@ -203,7 +203,7 @@
 						} else if (buffer[i] == test[pos] && i!=partialPosition) {
 							pos++;
 							lastMatch = i;
-						} 
+						}
 					}
 					if (!allow && lastMatch + 1 < partialPosition) {
 						input.val("");

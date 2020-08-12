@@ -27,7 +27,7 @@ function of_get_option($name, $default = false) {
 }
 
 
-	
+
 /************************************************************
 /* Theme Settings
 /************************************************************/
@@ -69,7 +69,7 @@ if ( ! function_exists( 'filter_search' ) ) {
 		return $query;
 	};
 }
-	
+
 add_filter('pre_get_posts', 'filter_search');
 
 if ( ! function_exists( 'filter_tag' ) ) {
@@ -91,7 +91,7 @@ $locale = get_locale();
 $locale_file = TEMPLATEPATH."/languages/$locale.php";
 if ( is_readable($locale_file) )
 	require_once($locale_file);
-	
+
 
 
 
@@ -106,12 +106,12 @@ add_image_size('md_post_thumb_large', 460, 350, true);
 add_image_size('md_post_thumb_medium', 300, 100, true);
 add_image_size('md_post_thumb_small', 220, 170, true);
 add_image_size('md_post_thumb_portrait', 300, 420, true);
-	
 
-if ( ! function_exists( 'getThumb' ) ) {	
+
+if ( ! function_exists( 'getThumb' ) ) {
 	function getThumb($th) {
 		global $post;
-		
+
 		switch($th) {
 			case 'mini':
 			  $class = 'four columns featured';
@@ -139,12 +139,12 @@ if ( ! function_exists( 'getThumb' ) ) {
 			  $after = 3;
 			break;
 		}
-		
+
 		@$img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $thumbsize );
 		return array($img[0],$class,$thumbsize,$after);
 	}
-}	
-	
+}
+
 
 
 
@@ -169,16 +169,16 @@ if ( ! function_exists( 'new_excerpt_more' ) ) {
 add_filter('excerpt_more', 'new_excerpt_more');
 add_filter('excerpt_length', 'custom_excerpt_length', 999 );
 
-							
+
 /************************************************************
 /* Share Funcs
 /************************************************************/
 
 if ( ! function_exists( 'showshareingpost' ) ) {
-	function showshareingpost($url,$img, $title, $code=false,$top=false) { 
-	
+	function showshareingpost($url,$img, $title, $code=false,$top=false) {
+
 		$output = '';
-		
+
 		if(of_get_option('md_social_post_facebook')) {
 			if(!$code) {
 		$output .= '<div class="facebook shr"><iframe src="//www.facebook.com/plugins/like.php?href='.urlencode($url).'&amp;send=false&amp;layout=button_count&amp;width=62&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:62px; height:21px;" allowTransparency="true"></iframe></div>';
@@ -187,16 +187,16 @@ if ( ! function_exists( 'showshareingpost' ) ) {
 		$output .='';
 			}
 		}
-		
+
 		if(of_get_option('md_social_post_twitter')) {
 			if(!$code) {
 		$output .= '<div class="twitter shr"><a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-url="'.$url.'" data-text="'.$title.'">Tweet</a></div>';
 			if($top) $output .= '<br class="clear">';
 			}else{
-		$output .= '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>'; 
+		$output .= '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
 			}
 		}
-	
+
 		if(of_get_option('md_social_post_googleplus')) {
 			if(!$code) {
 		$output .= '<div class="googleplus shr"><div class="g-plusone" data-size="medium" data-annotation="none"></div></div>';
@@ -207,29 +207,29 @@ if ( ! function_exists( 'showshareingpost' ) ) {
 		var po = document.createElement(\'script\'); po.type = \'text/javascript\'; po.async = true;
 		po.src = \'https://apis.google.com/js/plusone.js\';
 		var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(po, s);
-		})();</script>'; 
+		})();</script>';
 			}
 		}
-		
+
 		if(of_get_option('md_social_post_pinterest')) {
 			if(!$code) {
 		$output .= '<div class="pinterest shr"><a href="http://pinterest.com/pin/create/button/?url='.urlencode($url).'&amp;media='.urlencode($img).'&amp;description='.urlencode($title).'" class="pin-it-button"><img style="border:none" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></div>';
 			if($top) $output .= '<br class="clear">';
 			}else{
-		$output .= '<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>'; 
+		$output .= '<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>';
 			}
 		}
-		
+
 		if(of_get_option('md_social_post_tumblr')) {
 			if(!$code) {
 		$output .= '<div class="tumblr shr"><a href="http://www.tumblr.com/share" title="Share on Tumblr" style="display:inline-block; text-indent:-9999px; overflow:hidden; width:61px; height:20px; background:url(\'http://platform.tumblr.com/v1/share_4.png\') top left no-repeat transparent;"></a></div>';
 			}else{
-		$output .= '<script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script>'; 
+		$output .= '<script type="text/javascript" src="http://platform.tumblr.com/v1/share.js"></script>';
 			}
 		}
-		
+
 		return $output;
-	
+
 	}
 }
 
@@ -237,7 +237,7 @@ if ( ! function_exists( 'showshareingpost' ) ) {
 
 if ( ! function_exists( 'showSharing' ) ) {
 	function showSharing() {
-		
+
 		$facebook = of_get_option('md_social_facebook');
 		$twitter = of_get_option('md_social_twitter');
 		$tumblr = of_get_option('md_social_tumblr');
@@ -248,9 +248,9 @@ if ( ! function_exists( 'showSharing' ) ) {
 		$linkedin = of_get_option('md_social_linkedin');
 		$behance = of_get_option('md_social_behance');
 		$dribbble = of_get_option('md_social_dribble');
-		
+
 		$args = array();
-		
+
 		if($facebook) {
 			$args = array_merge($args,array('facebook'=>$facebook));
 		}
@@ -281,54 +281,54 @@ if ( ! function_exists( 'showSharing' ) ) {
 		if($dribbble) {
 			$args = array_merge($args,array('dribbble'=>$dribbble));
 		}
-		
-		
+
+
 		foreach($args as $k=>$v) {
-		  echo '<a href="'.$v.'" title="'.ucfirst($k).'" target="_blank"><i class="fa fa-'.$k.'"></i></a>';	
+		  echo '<a href="'.$v.'" title="'.ucfirst($k).'" target="_blank"><i class="fa fa-'.$k.'"></i></a>';
 		}
-	}                 
+	}
 }
 
-							
+
 /************************************************************
 /* PROJECT NAVIGATION
 /************************************************************/
 
 if ( ! function_exists( 'getNextBack' ) ) {
 	function getNextBack($w, $type, $current, $current2) {
-		
+
 		global $wpdb;
-		
+
 		$options = get_option('cpto_options');
-		
-		if($options['adminsort']==1 && function_exists('CPTO_activated') && $type=='works') {
-			$ordering1 = "menu_order";	
-			$take = $current;	
+
+		if((isset($options['adminsort']) && $options['adminsort']==1) && function_exists('CPTO_activated') && $type=='works') {
+			$ordering1 = "menu_order";
+			$take = $current;
 			if(
-			$w=="next") { 
+			$w=="next") {
 				$whr = ">";
 				$ordering = "asc";
 			}else{
-				$whr = "<";	
+				$whr = "<";
 				$ordering = "desc";
 			}
-		
+
 		}else{
 			$ordering1 = "post_date";
-			$take = $current2;	
-			if($w=="prev") { 
+			$take = $current2;
+			if($w=="prev") {
 				$whr = ">";
 				$ordering = "asc";
 			}else{
-				$whr = "<";	
+				$whr = "<";
 				$ordering = "desc";
 			}
-		
+
 	}
-		
-	
+
+
 	  $myrows = $wpdb->get_row( "SELECT ID, post_title FROM ".$wpdb->posts." WHERE post_type='$type' AND post_status='publish' AND $ordering1 $whr '$take' order by $ordering1 $ordering limit 1" );
-		
+
 		if(isset($myrows->ID)) {
 		return array(
 				'post_title'=>$myrows->post_title,
@@ -339,16 +339,16 @@ if ( ! function_exists( 'getNextBack' ) ) {
 }
 
 
-							
+
 /************************************************************
 /* Navigation
 /************************************************************/
 
-register_nav_menus(  
-    array(  
-        'main_menu' => 'Main&amp;Mobile Menu')  
-    ); 
-	
+register_nav_menus(
+    array(
+        'main_menu' => 'Main&amp;Mobile Menu')
+    );
+
 
 /************************************************************
 /* CUSTOM RSS
@@ -368,11 +368,11 @@ add_filter('request', 'myfeed_request');
 /* Get Page Name
 /************************************************************/
 
-if ( ! function_exists( 'getPageName' ) ) {	
+if ( ! function_exists( 'getPageName' ) ) {
 	function getPageName() {
 		global $post;
 		global $pagename;
-		
+
 		$pagename = get_query_var('pagename');
 		if ( !$pagename && isset($id) > 0 ) {
 		// If a static page is set as the front page, $pagename will not be set. Retrieve it from the queried object
@@ -388,10 +388,10 @@ if ( ! function_exists( 'getPageName' ) ) {
 /* Comments
 /************************************************************/
 
-if ( ! function_exists( 'drone_comments' ) ) {		
+if ( ! function_exists( 'drone_comments' ) ) {
 	function drone_comments( $comment, $args, $depth ) {
 	   $GLOBALS['comment'] = $comment; ?>
-	   
+
 	   <div <?php comment_class('singlecomment border-color'); ?> id="comment-<?php comment_ID() ?>">
 		   <div class="who">
 			 <span class="img border-color">
@@ -400,22 +400,22 @@ if ( ! function_exists( 'drone_comments' ) ) {
 			 <span class="info">
 				<strong><?php printf( __( '%s', 'dronetv' ), sprintf( '%s', get_comment_author_link() ) ); ?></strong>
 				<br />
-				<?php echo human_time_diff( get_comment_time('U'), current_time('timestamp') ) . ' ago';  ?>  
+				<?php echo human_time_diff( get_comment_time('U'), current_time('timestamp') ) . ' ago';  ?>
 				<?php edit_comment_link( __( ' · (Edit)', 'dronetv' ),'  ','' ) ?>
-				· <?php comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ) ?>    
+				· <?php comment_reply_link( array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ) ?>
 			 </span>
 		   </div>
-		  
-		  <div class="ccontent"> 
+
+		  <div class="ccontent">
 		   <?php if ( $comment->comment_approved == '0' ) : ?>
 			 <em><?php _e( 'Your comment is awaiting moderation.', 'dronetv' ) ?></em>
 			 <br />
 		  <?php endif; ?>
-		  
+
 			<?php comment_text() ?>
-		   </div> 
+		   </div>
 	   </div>
-	   
+
 	<?php
 	}
 }
@@ -425,7 +425,7 @@ if ( ! function_exists( 'drone_comments' ) ) {
 /************************************************************
 /* Page Header
 /************************************************************/
-	
+
 	function get_page_headers() {
 		global $post;
 		if(isset($post->ID)) {
@@ -437,7 +437,7 @@ if ( ! function_exists( 'drone_comments' ) ) {
                     </h3>
                 </div>
             </div>
-          
+
           <?php
 		}
 	}
@@ -446,13 +446,13 @@ if ( ! function_exists( 'drone_comments' ) ) {
 /* Admin Function Includes
 /************************************************************/
 	if(is_admin()) {
-		global $pagenow; 
+		global $pagenow;
 		if($pagenow=='options-reading.php') {
-			function nor_add_to_reading_page() { 
+			function nor_add_to_reading_page() {
 				?>
 				<style type="text/css">
 					/* Do NOT use Posts Page option notification */
-					.nor-no-posts-page { 
+					.nor-no-posts-page {
 						background:#cc0000;
 						color:#fff;
 						padding:3px 10px;
@@ -462,7 +462,7 @@ if ( ! function_exists( 'drone_comments' ) ) {
 					}
 				</style>
 				<script type="text/javascript">
-					//// ONLOAD	
+					//// ONLOAD
 					jQuery(document).ready(function($){
 						// Add Posts Page notification
 						jQuery('#front-static-pages [name=page_for_posts]').parent().append('<br class="clear"><div class="nor-no-posts-page"><strong>Important :</strong> Do <u>NOT</u> set <strong>Posts page</strong> option. Blog page can be created with Blog template at Pages.<br>Leave Posts page option unset to prevent conflicts.</div>');
@@ -470,11 +470,11 @@ if ( ! function_exists( 'drone_comments' ) ) {
 				</script>
 			<?php
 			}
-		
+
 			add_action('admin_footer', 'nor_add_to_reading_page');
 		}
 	}
-	
+
 
 /************************************************************
 /* Admin Function Includes
@@ -484,16 +484,16 @@ require_once( THEME_FILEPATH . '/functions/custom-metabox.php' );
 require_once( THEME_FILEPATH . '/functions/md-assets.php' );
 require_once( THEME_FILEPATH . '/functions/widgets.php' );
 require_once( THEME_FILEPATH . '/functions/ajax.php' );
-	
-	
+
+
 /// EXCLUSIVE CSS CLASSES FOR POST LOOP
 	add_filter('post_class', 'my_post_class');
 
-if ( ! function_exists( 'my_post_class' ) ) {		
+if ( ! function_exists( 'my_post_class' ) ) {
 	function my_post_class($classes){
 	  global $wp_query;
 	  if(($wp_query->current_post+1) == $wp_query->post_count) $classes[] = 'end';
 	  return $classes;
 	}
-}	
+}
 ?>
