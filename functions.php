@@ -111,6 +111,11 @@ add_image_size('md_post_thumb_portrait', 300, 420, true);
 if ( ! function_exists( 'getThumb' ) ) {
 	function getThumb($th) {
 		global $post;
+        
+        /* default */
+        $class = 'one-third column featured';
+        $thumbsize = 'md_post_thumb_medium';
+        $after = 3;
 
 		switch($th) {
 			case 'mini':
@@ -140,13 +145,18 @@ if ( ! function_exists( 'getThumb' ) ) {
 			break;
 		}
 
-		@$img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $thumbsize );
-		return array($img[0],$class,$thumbsize,$after);
+        if( isset($post->ID) ) {
+		    $img = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), $thumbsize );
+            if( isset($img[0]) ) {
+                $image = $img[0];
+            }else{
+                $image = '';
+            }
+        }
+        
+		return array($image,$class,$thumbsize,$after);
 	}
 }
-
-
-
 
 
 /************************************************************
