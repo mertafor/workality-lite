@@ -191,7 +191,7 @@ if ( ! function_exists( 'showshareingpost' ) ) {
 
 		if(of_get_option('md_social_post_facebook')) {
 			if(!$code) {
-		$output .= '<div class="facebook shr"><iframe src="//www.facebook.com/plugins/like.php?href='.urlencode($url).'&amp;send=false&amp;layout=button_count&amp;width=62&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:62px; height:21px;" allowTransparency="true"></iframe></div>';
+		$output .= '<div class="facebook shr"><iframe src="//www.facebook.com/plugins/like.php?href='.urlencode($url).'&amp;send=false&amp;layout=button_count&amp;width=62&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:70px; height:21px;" allowTransparency="true"></iframe></div>';
 		if($top) $output .= '<br class="clear">';
 			}else{
 		$output .='';

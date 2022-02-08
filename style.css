@@ -1918,10 +1918,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	.sharingbottom div.shr {
 		height:24px;
 		float:left;
-		overflow:hidden;
 		position:relative;
 		margin:0px 5px 0px 0;
 	}
+    /*
 	.sharingbottom div.facebook {
 		width:62px;
 		margin-bottom:5px;
@@ -1938,6 +1938,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	.sharingbottom div.pinterest {
 		width:44px;
 	}
+    */
 
 
 
