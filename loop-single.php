@@ -7,33 +7,35 @@
 	$prev_post = getNextBack('prev','post',$post->menu_order,$post->post_date);
 	$next_post = getNextBack('next','post',$post->menu_order,$post->post_date);
 	
-// SHOW SIDEBAR WHETHER OR NOT
-$dontshow_sidebar_single = of_get_option('md_posts_sidebar_single');
-$theblogtitle = of_get_option('md_theblog_title');
+    // SHOW SIDEBAR WHETHER OR NOT
+    $dontshow_sidebar_single = of_get_option('md_posts_sidebar_single');
+    $theblogtitle = of_get_option('md_theblog_title');
 
+    // AJAX TOKEN
+    if( !isset($token) ) {
+        $token = wp_create_nonce("wp_token");
+    }
 ?>
 <div id="singlecontent">
-
-<br class="clear">
-      
-         <div class="columns navibg withall border-color">
-            <div class="four columns alpha">
-            	<h3><?php _e('Blog','dronetv'); ?></h3>
-            </div>
-            
-           <div class="twelve columns omega">
-            	<div class="navigate_blog">
-                	<hr class="resshow border-color" /> 
-                    <span class="pname"></span>
-                    <?php if(!empty( $prev_post['ID'])) { ?>
-                    <a href="<?php echo get_permalink($prev_post['ID']); ?>" data-type="blog" data-token="<?php echo $token?>" data-id="<?php echo $prev_post['ID']?>" title="<?php echo htmlspecialchars($prev_post['post_title'])?>" class="navigate back getworks-showmsg"><i class="fa fa-angle-left"></i></a>
-                    <?php } ?>
-                    <?php if(!empty( $next_post['ID'] )) { ?>
-                    <a href="<?php echo get_permalink($next_post['ID']); ?>" data-type="blog" data-token="<?php echo $token?>" data-id="<?php echo $next_post['ID']?>" title="<?php echo htmlspecialchars($next_post['post_title'])?>" class="navigate next getworks-showmsg"><i class="fa fa-angle-right"></i></a>
-					<?php } ?>
-            	</div>
-            </div>	
+    <br class="clear">
+    <div class="columns navibg withall border-color">
+    <div class="four columns alpha">
+        <h3><?php _e('Blog','dronetv'); ?></h3>
+    </div>
+    
+    <div class="twelve columns omega">
+        <div class="navigate_blog">
+            <hr class="resshow border-color" /> 
+            <span class="pname"></span>
+            <?php if(!empty( $prev_post['ID'])) { ?>
+            <a href="<?php echo get_permalink($prev_post['ID']); ?>" data-type="blog" data-token="<?php echo $token?>" data-id="<?php echo $prev_post['ID']?>" title="<?php echo htmlspecialchars($prev_post['post_title'])?>" class="navigate back getworks-showmsg"><i class="fa fa-angle-left"></i></a>
+            <?php } ?>
+            <?php if(!empty( $next_post['ID'] )) { ?>
+            <a href="<?php echo get_permalink($next_post['ID']); ?>" data-type="blog" data-token="<?php echo $token?>" data-id="<?php echo $next_post['ID']?>" title="<?php echo htmlspecialchars($next_post['post_title'])?>" class="navigate next getworks-showmsg"><i class="fa fa-angle-right"></i></a>
+            <?php } ?>
         </div>
+    </div>	
+</div>
         
 <br class="clear">
 
