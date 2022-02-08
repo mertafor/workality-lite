@@ -58,10 +58,20 @@
         
     ?>      
        <div class="postwraps sixteen columns showajaxcontent border-color">
+
                       <div class="fifteensp columns offset-by-half alpha">
                            <h2 class="titles" style="text-shadow:none!important;"><a href="<?php echo $permalink ?>" style="text-shadow:none!important;"><?php the_title(); ?></a></h2>
                            <hr />
                       </div>  
+
+                        <?php 
+                            if( post_password_required() ) {
+                                echo '<div class="fifteensp columns offset-by-half alpha pinfo">';
+                                the_content();
+                                echo '</div>';
+                            }else{
+                        ?>
+
                       <div class="fifteensp columns offset-by-half alpha pinfo">
                            <div class="four columns alpha">
                            		<?php if(isset($categories) && $categories!="") {?>
@@ -194,9 +204,13 @@
 					<?php } ?>
                     </div>
                 </div>
-                        <br class="clear" />
-                        <br class="clear" />
-           
+                <br class="clear" />
+                <br class="clear" />
+                
+                <?php
+                    // password protected 
+                    }
+                ?>
 		 </div>     
   </div> 
                         
