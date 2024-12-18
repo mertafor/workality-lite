@@ -63,7 +63,7 @@ Template Name: Archive
                        foreach ($cats as $catd) { 
                     ?>	
                     <li class="border-color">
-                        <a href="<?php echo get_category_link( $catd->cat_ID ); ?>" title="<?php echo $term->name; ?>"><?php echo $catd->name; ?></a>
+                        <a href="<?php echo get_category_link( $catd->cat_ID ); ?>" title="<?php echo $catd->name; ?>"><?php echo $catd->name; ?></a>
                     </li>
                     <?php } ?>
                     <?php	} ?>

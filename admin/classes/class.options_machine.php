@@ -9,7 +9,9 @@
  */
 
 class Options_Machine {
-
+  public $Inputs;
+  public $Menu;
+  public $Defaults;
 	/**
 	 * PHP5 contructor
 	 *

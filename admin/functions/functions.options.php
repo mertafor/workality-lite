@@ -237,16 +237,11 @@ $of_options[] = array( "name" => "Show Share Buttons in Posts",
 									"std" => "1",
 									"type" => "checkbox"); 																	
 $of_options[] = array( "name" => "",
-					"desc" => "Twitter",
+					"desc" => "X (Twitter)",
 					"id" => "md_social_post_twitter",
 					"std" => "1",
 					"type" => "checkbox");
-					
-$of_options[] = array( "name" => "",
-					"desc" => "Google +",
-					"id" => "md_social_post_googleplus",
-					"std" => "0",
-					"type" => "checkbox"); 	
+						
 										
 $of_options[] = array( "name" => "",
 					"desc" => "Pinterest",
@@ -341,7 +336,7 @@ $of_options[] = 		array(
 $of_options[] = 		array(
 						'id' => 'md_social_twitter',
 						'type' => 'text',
-						'name' => __('Twitter', ''),
+						'name' => __('X (Twitter)', ''),
 						'desc' => __('E.g. http://twitter.com/username', ''),
 						'std' => ''
 						);	

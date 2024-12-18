@@ -17,9 +17,8 @@ if ( !function_exists( 'of_get_option' ) ) {
 function of_get_option($name, $default = false) {
 		/// for custom
 		$optionsframework_settings = get_option('drone_options');
-		$option_name = @$optionsframework_settings[$name];
-		if (isset($option_name)) {
-			return $option_name;
+		if (isset($optionsframework_settings[$name])) {
+			return $optionsframework_settings[$name];
 		}else{
 			return false;
 		}
@@ -200,24 +199,10 @@ if ( ! function_exists( 'showshareingpost' ) ) {
 
 		if(of_get_option('md_social_post_twitter')) {
 			if(!$code) {
-		$output .= '<div class="twitter shr"><a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-url="'.$url.'" data-text="'.$title.'">Tweet</a></div>';
+		$output .= '<div class="twitter shr"><a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-url="'.$url.'" data-text="'.$title.'">Post</a></div>';
 			if($top) $output .= '<br class="clear">';
 			}else{
 		$output .= '<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
-			}
-		}
-
-		if(of_get_option('md_social_post_googleplus')) {
-			if(!$code) {
-		$output .= '<div class="googleplus shr"><div class="g-plusone" data-size="medium" data-annotation="none"></div></div>';
-			if($top) $output .= '<br class="clear">';
-			}else{
-		$output .= '<script type="text/javascript">
-		(function() {
-		var po = document.createElement(\'script\'); po.type = \'text/javascript\'; po.async = true;
-		po.src = \'https://apis.google.com/js/plusone.js\';
-		var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(po, s);
-		})();</script>';
 			}
 		}
 
@@ -265,7 +250,7 @@ if ( ! function_exists( 'showSharing' ) ) {
 			$args = array_merge($args,array('facebook'=>$facebook));
 		}
 		if($twitter) {
-			$args = array_merge($args,array('twitter'=>$twitter));
+			$args = array_merge($args,array('x-twitter'=>$twitter));
 		}
 		if($tumblr) {
 			$args = array_merge($args,array('tumblr'=>$tumblr));
@@ -294,7 +279,7 @@ if ( ! function_exists( 'showSharing' ) ) {
 
 
 		foreach($args as $k=>$v) {
-		  echo '<a href="'.$v.'" title="'.ucfirst($k).'" target="_blank"><i class="fa fa-'.$k.'"></i></a>';
+		  echo '<a href="'.$v.'" title="'.ucfirst($k).'" target="_blank"><i class="fa-brands fa-'.$k.'"></i></a>';
 		}
 	}
 }

@@ -50,6 +50,8 @@ if ( ! function_exists( 'md_admin_styles' ) ) {
 				wp_enqueue_style( 'jquery-ui-css', get_template_directory_uri() . '/functions/css/jquery-ui-aristo/aristo.css' ); /// date picker
 				wp_enqueue_script('color-picker-js', get_template_directory_uri() .'/admin/assets/js/colorpicker.js', array('jquery'));
 				}
+        wp_enqueue_style('nor-fontawesome-css', get_template_directory_uri() . '/icon-font/font-awesome/all.min.css');
+        wp_enqueue_style('nor-fontawesome-css-shim', get_template_directory_uri() . '/icon-font/font-awesome/v4-shims.min.css');
 	}
 }
 
@@ -63,7 +65,9 @@ add_action( 'wp_footer', 'md_add_footer' );
 
 if ( ! function_exists( 'md_add_wphead' ) ) {
 	function md_add_wphead() {
-		
+    wp_enqueue_style('nor-fontawesome-css', get_template_directory_uri() . '/icon-font/font-awesome/all.min.css');
+    wp_enqueue_style('nor-fontawesome-css-shim', get_template_directory_uri() . '/icon-font/font-awesome/v4-shims.min.css');
+
 		// Modernizr
 		wp_register_script( 'modernizr', get_template_directory_uri() . '/js/modernizr.js' );
 		wp_enqueue_script( 'modernizr' );

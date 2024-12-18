@@ -30,8 +30,9 @@ if ( ! function_exists( 'md_works' ) ) {
 			'publicly_queryable' => true,
 			'exclude_from_search' => true,
 			'query_var' => true,
-			'menu_icon'=>get_template_directory_uri() . '/images/portfolio_icon.png',
+			'menu_icon'=>'dashicons-open-folder',
 			'rewrite' => true,
+      'show_in_rest'=>true,
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			'supports' => array( 'title', 'editor','thumbnail')
