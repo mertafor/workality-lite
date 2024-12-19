@@ -8,24 +8,12 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title><?php
+	<?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
 	 */
 	global $page, $paged;
 
-	wp_title( '|', true, 'right' ); 
-	
-	// Add the blog name.
-	echo get_bloginfo( 'name' );
-	
-	
-	if(!is_single()) { 
-		if(of_get_option('md_header_logo_subtext')) { 
-			echo " - ".of_get_option('md_header_logo_subtext'); 
-			} 
-	}
-	
 	/// CREATE DESCRIPTION
 	if(is_single()) { 
 		$post = $wp_query->post;
@@ -43,9 +31,13 @@
 	}else{ 
 		$descrip = of_get_option('md_header_seo_description');
 	}
-	  ?></title>
+	  ?>
+   <?php if($descrip){ ?> 
 	<meta name="description" content="<?php echo $descrip; ?>">
+  <?php } ?>
+  <?php if(of_get_option('md_header_seo_keywords')) { ?>
 	<meta name="keywords" content="<?php echo of_get_option('md_header_seo_keywords'); ?>">
+  <?php } ?>
     
 	<meta name="author" content="northeme.com" />
 

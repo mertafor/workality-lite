@@ -33,6 +33,7 @@ function of_get_option($name, $default = false) {
 add_theme_support( 'menus' ); // add custom menus support
 add_theme_support('automatic-feed-links');
 add_theme_support('post-thumbnails');
+add_theme_support('title-tag');
 add_filter('widget_text', 'do_shortcode');
 
 add_action('init', 'my_custom_init');
